@@ -1,0 +1,255 @@
+/* Utilities*/
+*,*::before, ::after 
+{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+body
+{
+  padding: 15px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+body, aside, section, header, footer
+{
+  position: relative;
+}
+@media screen and (max-width: 414px)
+{
+  body
+  {
+    padding: 0;
+  }
+}
+/*Scrollbar*/
+::-webkit-scrollbar
+{
+  width: 15px;
+}
+::-webkit-scrollbar-track
+{
+  background: #F4F4F4;
+}
+::-webkit-scrollbar-thumb
+{
+  background: #C9BEB9;
+  border-radius: 10px;
+}
+#team
+{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.agents-heading
+{
+  font-size: 1.3rem;
+  color: #2c2c2c;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+.agent-box
+{
+  width: 260px;
+  height: 380px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px;
+  position: relative;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.our-agents-container
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.agent-box-top-bar
+{
+  width: 50%;
+  height: 4px;
+  position: absolute;
+  left: 50%;
+  top:0;
+  transform: translate(-50%);
+  background-color: #333;
+  border-radius: 0 0 10px 10px;
+}
+.agent-box-verify
+{
+  color: blue;
+}
+.agent-box-nav
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.agent-box-details
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.agent-box-details img
+{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+}
+.agent-box-details p
+{
+  font-size: 0.8rem;
+  color: #7a7a7a;
+  margin: 5px 0;
+}
+.agent-socials
+{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.agent-socials a
+{
+  height: 45px;
+  width: 45px;
+  border-radius: 10px;
+  font-size: 22px;
+  line-height: 45px;
+  color: #333;
+}
+.agent-socials a i
+{
+  padding-left: 13px;
+}
+.agent-box:hover
+{
+  transform: scale(1.01);
+  transition: all ease 0.1s;
+}
+/*search bar */
+.search-bar
+{
+  width: 220px;
+  position: relative;  
+}
+.search-icon
+{
+  position: absolute;
+  right: 10px;
+  color: white;
+  transform: translateY(calc(-50% - 23px));
+}
+.search-bar-input
+{
+  width: 100%;
+  height: 20px;
+  padding: 10px;
+  color: white;
+  transition: .2s linear;
+  border: 2.5px solid rgb(255, 255, 255);
+  font-size: 14px;
+  background: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-left: 20px;
+}
+.search-bar-input::placeholder
+{ 
+  color: white;
+  opacity: 1; 
+}
+
+.search-bar:hover > .search-icon
+{
+  animation: anim 1s linear infinite;
+}
+@keyframes anim
+{
+  0%,
+  100%
+  {
+    transform: translateY(calc(-50% - 23px)) scale(1);
+  }
+  50%
+  {
+    transform: translateY(calc(-50% - 23px)) scale(1.1);
+  }
+}
+
+@media screen and (max-width: 650px)
+{
+  .search-bar
+  {
+    position: relative;
+    margin: 0 0px; /* adjust the margin as desired */
+    width: calc(100% - 70px); /* subtract the left and right margins from 100% */
+  }
+  .search-icon
+  {
+    position: absolute;
+    right: 10px;
+    color: white;
+  }
+  .search-bar-input
+  {
+    width: 100%;
+    height: 20px;
+    padding: 10px;
+    color: white;
+    transition: .2s linear;
+    border: 2.5px solid rgb(255, 255, 255);
+    font-size: 14px;
+    background: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .search-bar-input::placeholder
+  { 
+    color: white;
+    opacity: 1; 
+  }
+}
+.pagination
+{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+.pagination a
+{
+  display: inline-block;
+  padding: 10px;
+  margin: 0 5px;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid black;
+}
+.pagination a.active
+{
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+
