@@ -1,5 +1,4 @@
 <?php
-   /*done a 100% */
     @include '../Configuration/connect.php';
     session_start();
     if(!isset($_SESSION['userName']))
@@ -55,10 +54,6 @@
     $countUser->setFetchMode(PDO::FETCH_ASSOC);
     $countUser->execute();
     $countUserResult=$countUser->fetchAll();
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

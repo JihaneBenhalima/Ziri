@@ -1,5 +1,4 @@
 <?php
- /**done a 100% */
  @include_once '../Configuration/connect.php';
   session_start();
   if(!isset($_SESSION['userName']))

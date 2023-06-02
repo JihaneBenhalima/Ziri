@@ -1,5 +1,4 @@
 <?php
-  /*done a 100% */
   @include_once '../Configuration/connect.php';
     session_start();
     if(!isset($_SESSION['userName']))
@@ -85,14 +84,12 @@
    </section>
   </body>
   <script>
-
-function searchTable() {
+  function searchTable() {
   var input, filter, table, tr, td, i, j, txtValue;
   input = document.getElementById("searchInput");
   filter = input.value.toUpperCase();
   table = document.getElementsByClassName("table")[0];
   tr = table.getElementsByTagName("tr");
-
   // Loop through all table rows and cells and hide those that don't match the search query
   for (i = 0; i < tr.length; i++) {
     for (j = 0; j < tr[i].cells.length; j++) {
@@ -108,10 +105,6 @@ function searchTable() {
       }
     }
   }
-}
-
-
+  }
   </script>
-
-
 </html>

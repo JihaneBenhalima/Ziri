@@ -1,5 +1,4 @@
 <?php
-  /*done a 100% */
   @include_once '../Configuration/connect.php';
     session_start();
     if(!isset($_SESSION['userName']))
@@ -65,6 +64,7 @@
                      <thead>
                          <tr>
                              <th>Id</th>
+                             <th>Picture</th>
                              <th>Name</th>
                              <th>Last name</th>
                              <th>Email</th>
@@ -86,6 +86,7 @@
                                <input type="hidden" name="userID" value="<?= $user->id ?>">
                                <tr>
                                   <th><?= $user->id?></th>
+                                  <td><div class="avatar"><div class="w-14 rounded-full"><img src="../agents/<?= $user->profilePicture?>" /></div></div></td>
                                   <td><?= $user->name?></td>
                                   <td><?= $user->last_name?></td>
                                   <td><?= $user->email?></td>
@@ -139,10 +140,10 @@
         tr[i].style.display = "none";
       }
     }
-  }
-}
-function confirmDelete() {
-    return confirm("Are you sure you want to delete this user?");
-}
-</script>
+    }
+    }
+    function confirmDelete() {
+     return confirm("Are you sure you want to delete this user?");
+    }
+ </script>
 </html>

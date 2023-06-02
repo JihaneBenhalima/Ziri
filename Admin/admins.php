@@ -1,5 +1,4 @@
 <?php
-  /*done a 100%*/
   @include_once '../Configuration/connect.php';
     session_start();
     if(!isset($_SESSION['userName']))
@@ -78,19 +77,20 @@
      // Loop through all table rows and hide those that don't match the search query
      for (i = 0; i < tr.length; i++) {
      td = tr[i].getElementsByTagName("td")[0];
-     if (td) {
+     if (td)
+     {
       txtValue = td.textContent || td.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
       } else {
         tr[i].style.display = "none";
       }
+     }
+     }
     }
-  }
-}
-function confirmDelete() {
-    return confirm("Are you sure you want to delete this admin?");
-}
-</script>
-
+    function confirmDelete()
+    {
+     return confirm("Are you sure you want to delete this admin?");
+    }
+ </script>
 </html>

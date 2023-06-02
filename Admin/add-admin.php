@@ -1,18 +1,17 @@
 <?php
- /*this is done a 100% */
- @include_once '../Configuration/connect.php';
-    session_start();
-    if(!isset($_SESSION['userName']))
-    {
-      header('location:../Admin/log-in_admin.php');
-    }
- $success=0;
- $user=0;
- $match=0;
- $empty=0;
- $invalid_password=0;
- $max_admins = 10;
- $maxAdmins=0;
+  @include_once '../Configuration/connect.php';
+  session_start();
+  if(!isset($_SESSION['userName']))
+  {
+    header('location:../Admin/log-in_admin.php');
+  }
+  $success=0;
+  $user=0;
+  $match=0;
+  $empty=0;
+  $invalid_password=0;
+  $max_admins = 10;
+  $maxAdmins=0;
  if(isset($_POST['add-admin']))
  {
    include '../Configuration/connect.php';
@@ -142,18 +141,21 @@
     </section>
  </body>
  <script>
-  function showPassword() {
-    var passwordInput = document.getElementById("password-input");
-    var confirmPasswordInput = document.getElementById("confirm-password-input");
-    var checkbox = document.getElementById("checkbox");
-  
-    if (checkbox.checked) {
-      passwordInput.type = "text";
-      confirmPasswordInput.type = "text";
-    } else {
-      passwordInput.type = "password";
-      confirmPasswordInput.type = "password";
-    }
-  }
+   function showPassword()
+   {
+     var passwordInput = document.getElementById("password-input");
+     var confirmPasswordInput = document.getElementById("confirm-password-input");
+     var checkbox = document.getElementById("checkbox");
+     if (checkbox.checked)
+     {
+       passwordInput.type = "text";
+       confirmPasswordInput.type = "text";
+     }
+     else
+     {
+       passwordInput.type = "password";
+       confirmPasswordInput.type = "password";
+     }
+   }
  </script>
 </html>

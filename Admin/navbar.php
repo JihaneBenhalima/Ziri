@@ -1,4 +1,4 @@
-<!-- done a 100% -->
+
 <nav>
     <div class="logo-name">
         <div class="logo-image">

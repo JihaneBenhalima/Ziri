@@ -1,5 +1,4 @@
 <?php
-  /*/**done a 100% */
   @include_once '../Configuration/connect.php';
     session_start();
     if(!isset($_SESSION['userName']))
@@ -74,8 +73,7 @@
    </section>
   </body>
   <script>
-
-function searchTable()
+   function searchTable()
     {
      var input, filter, table, tr, td, i, txtValue;
      input = document.getElementById("searchInput");
@@ -93,13 +91,10 @@ function searchTable()
         tr[i].style.display = "none";
       }
     }
-  }
-}
-function confirmDelete() {
-    return confirm("Are you sure you want to delete this review?");
-}
-  </script>
-
-
-
+   }
+   }
+    function confirmDelete() {
+     return confirm("Are you sure you want to delete this review?");
+   }
+ </script>
 </html>

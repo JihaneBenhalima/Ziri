@@ -1,6 +1,5 @@
 <?php
  session_start();
-
  $invalid=0;
  $empty=0;
  if(isset($_POST['log-in-admin']))
@@ -22,11 +21,8 @@
        $row = $result[0];
        if(password_verify($code, $row['code']))
        {
-         
-         
-           $_SESSION['userName'] = $row['userName'];
-           header('location:../Admin/admin.php');
-         
+          $_SESSION['userName'] = $row['userName'];
+          header('location:../Admin/admin.php');
        }
        else
        {
@@ -46,7 +42,6 @@
     }
   }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
  <head>
@@ -95,16 +90,12 @@
               <i id="hide" class="fa-regular fa-eye"></i>
               <i id="unhide" class="fa-regular fa-eye-slash"></i>
             </div>
-            
-        
             <button type="submit" name="log-in-admin" class="register-btn" method="post"> Log in
               <div class="register-btn-icon">
                 <i class="fa-solid fa-arrow-right-to-bracket"></i>
               </div>
             </button>
           </form>
-            
-         
         </div>
      </div>  
    </section>
@@ -128,6 +119,5 @@
         c.style.display = "block";
      }
     }
-    
  </script>
 </html>

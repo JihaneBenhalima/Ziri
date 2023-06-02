@@ -1,5 +1,4 @@
 <?php
-/*done a 100% */
   require_once('../Configuration/connect.php');
   require_once('../Configuration/command.php');
     session_start();
@@ -28,14 +27,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="../Admin/admin.css">
-     <link rel="stylesheet" href="../css/all.min.css">
-     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css" rel="stylesheet" type="text/css" />
-     <script src="https://cdn.tailwindcss.com"></script>
-     <title>Pending agents requests</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Admin/admin.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Pending agents requests</title>
   </head>
   <body> 
       <?php
@@ -54,6 +53,7 @@
                  <thead>
                      <tr>
                          <th>Id</th>
+                         <th>Picture</th>
                          <th>Name</th>
                          <th>Last name</th>
                          <th>Address</th>
@@ -69,6 +69,7 @@
                               <input type="hidden" name="pendingAgentID" value="<?= $pendingAgent->id ?>">
                               <tr>
                                  <th><?= $pendingAgent->id?></th>
+                                 <td><div class="avatar"><div class="w-14 rounded-full"><img src="../agents/<?= $agent->profilePicture?>" /></div></div></td>
                                  <td><?= $pendingAgent->name?></td>
                                  <td><?= $pendingAgent->last_name?></td>
                                  <td><?= $pendingAgent->homeAddress?></td>
@@ -116,8 +117,8 @@
   overlay.addEventListener("click", function() {
     document.body.removeChild(overlay);
   });
-}
-function searchTable()
+  }
+   function searchTable()
     {
      var input, filter, table, tr, td, i, txtValue;
      input = document.getElementById("searchInput");
@@ -135,12 +136,7 @@ function searchTable()
         tr[i].style.display = "none";
       }
     }
-  }
-}
-
-
-</script>
-
-
-
+   }
+   }
+ </script>
 </html>

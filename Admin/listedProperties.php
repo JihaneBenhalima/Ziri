@@ -1,5 +1,4 @@
 <?php
- /**done a 100% */
  @include_once '../Configuration/connect.php';
   session_start();
   if(!isset($_SESSION['userName']))
@@ -171,6 +170,6 @@
    }
    function confirmDelete() {
     return confirm("Are you sure you want to delete this property?");
-}
+   }
  </script>
 </html>
