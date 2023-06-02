@@ -87,15 +87,15 @@
                  </label>
                  <select class="select" name="propertyType" id="searchBoxType" onchange="redirectToPage()">
                      <option value="">All</option>  
-                     <option class="option" value="../GuestSession/properties_searchByType_guest.php?propertyType=Family%20home">Family home</option>
-                     <option class="option" value="../GuestSession/properties_searchByType_guest.php?propertyType=apartment">Apartment</option>
-                     <option class="option" value="../GuestSession/properties_searchByType_guest.php?propertyType=Duplex">Duplex</option>
-                     <option class="option" value="../GuestSession/properties_searchByType_guest.php?propertyType=Villa">Villa</option>
-                     <option class="option" value="../GuestSession/properties_searchByType_guest.php?propertyType=Farm%20house">Farm house</option>
-                     <option class="option" value="../GuestSession/properties_searchByType_guest.php?propertyType=Retail%20property">Retail property</option>
-                     <option class="option" value="../GuestSession/properties_searchByType_guest.php?propertyType=Office%20building">Office building</option>
-                     <option class="option" value="../GuestSession/properties_searchByType_guest.php?propertyType=Warehouse">Warehouse</option>
-                     <option class="option" value="../GuestSession/properties_searchByType_guest.php?propertyType=Land">Land</option>  
+                     <option class="option" value="../UserSession/properties_searchByType_user.php?propertyType=Family%20home">Family home</option>
+                     <option class="option" value="../UserSession/properties_searchByType_user.php?propertyType=apartment">Apartment</option>
+                     <option class="option" value="../UserSession/properties_searchByType_user.php?propertyType=Duplex">Duplex</option>
+                     <option class="option" value="../UserSession/properties_searchByType_user.php?propertyType=Villa">Villa</option>
+                     <option class="option" value="../UserSession/properties_searchByType_user.php?propertyType=Farm%20house">Farm house</option>
+                     <option class="option" value="../UserSession/properties_searchByType_user.php?propertyType=Retail%20property">Retail property</option>
+                     <option class="option" value="../UserSession/properties_searchByType_user.php?propertyType=Office%20building">Office building</option>
+                     <option class="option" value="../UserSession/properties_searchByType_user.php?propertyType=Warehouse">Warehouse</option>
+                     <option class="option" value="../UserSession/properties_searchByType_user.php?propertyType=Land">Land</option>  
                  </select>
              </div>
          </div>
@@ -229,6 +229,13 @@
              }          
           }
        }
+       function redirectToPage() {
+     var selectElement = document.getElementById("searchBoxType");
+     var selectedValue = selectElement.value;
+     if (selectedValue !== "") {
+      window.location.href = selectedValue;
+    }
+    }
     
 
 </script>

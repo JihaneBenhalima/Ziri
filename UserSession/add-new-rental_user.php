@@ -66,7 +66,7 @@
       $result->execute();
       $row = $result->fetch(PDO::FETCH_ASSOC);
       $rentalCount = $row['rentalCount'];
-      if($rentalCount >= 30)
+      if($rentalCount >= 5)
       {
         $limit=1;
       }
