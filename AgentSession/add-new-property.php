@@ -7,7 +7,6 @@
   }
   $success=0;
   $fail=0;
-  $limit=0;
   if(isset($_POST['add_property']))
   {
     $propertyTitle = $_POST['propertyTitle'];
@@ -112,15 +111,6 @@ require('../Header/header_agent.php')
            <div>
              <i style="color: red;" class="fa-solid fa-circle-exclamation"></i>
              <span>Please fill all fields</span>
-           </div>
-         </div>';
-         }
-         if($limit)
-         {
-           echo '<div style="border: 1px solid red;margin-bottom:30px;" class="alert shadow-lg">
-           <div>
-             <i style="color: red;" class="fa-solid fa-circle-exclamation"></i>
-             <span>You have reached the limit of short-term rentals post</span>
            </div>
          </div>';
          }

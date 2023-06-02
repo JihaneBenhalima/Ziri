@@ -1,12 +1,14 @@
 <?php
- @include '../Website/Configuration/connect.php';
- session_start();
- if(!isset($_SESSION['agent_name']) AND !isset($_SESSION['agent_last_name']) )
- {
-   header('location:../Website/log-in.php');
- }
-    require("../Website/Configuration/command.php");
+    /**Done a 100% */
+    @include '../Configuration/connect.php';
+    require("../Configuration/command.php");
+    session_start();
+    if(!isset($_SESSION['agent_name']) AND !isset($_SESSION['agent_last_name']))
+    {
+     header('location:../Register/log-in.php');
+    }
     $properties=display();
+    $noResult=0;
     $propertyType = ''; // Set default value to an empty string
     if(isset($_GET['propertyType']))
     {
@@ -31,27 +33,25 @@
     <?php
     }
     else
-    {
-        echo "No properties found for '$propertyType'";
+    {   
+        $noResult=1;   
     }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
  <head>
      <meta charset="UTF-8">
-     <link rel="stylesheet" href="../Website/properties.css">
+     <link rel="stylesheet" href="../CssFiles/properties.css">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="../Website/css/all.min.css">
+     <link rel="stylesheet" href="../css/all.min.css">
      <title>Ziri|Properties</title>
  </head>
  <body>
-     <?php
-         require('../Website/loader.php')
-       ?>
      <!-- the header -->
      <?php
-         require('../Website/Header/header_agent.php')
+         require('../Header/header_agent.php')
        ?>
        <!-- properties page -->
        <div class="properties-page" id="property-page" style="background-color: #1a1a1a;">
@@ -87,15 +87,15 @@
                  </label>
                  <select class="select" name="propertyType" id="searchBoxType" onchange="redirectToPage()">
                      <option value="">All</option>  
-                     <option class="option" value="../GuestSession/properties_searchByType_guest.php?propertyType=Family%20home">Family home</option>
-                     <option class="option" value="../GuestSession/properties_searchByType_guest.php?propertyType=apartment">Apartment</option>
-                     <option class="option" value="../GuestSession/properties_searchByType_guest.php?propertyType=Duplex">Duplex</option>
-                     <option class="option" value="../GuestSession/properties_searchByType_guest.php?propertyType=Villa">Villa</option>
-                     <option class="option" value="../GuestSession/properties_searchByType_guest.php?propertyType=Farm%20house">Farm house</option>
-                     <option class="option" value="../GuestSession/properties_searchByType_guest.php?propertyType=Retail%20property">Retail property</option>
-                     <option class="option" value="../GuestSession/properties_searchByType_guest.php?propertyType=Office%20building">Office building</option>
-                     <option class="option" value="../GuestSession/properties_searchByType_guest.php?propertyType=Warehouse">Warehouse</option>
-                     <option class="option" value="../GuestSession/properties_searchByType_guest.php?propertyType=Land">Land</option>  
+                     <option class="option" value="../AgentSession/properties_searchByType_agent.php?propertyType=Family%20home">Family home</option>
+                     <option class="option" value="../AgentSession/properties_searchByType_agent.php?propertyType=apartment">Apartment</option>
+                     <option class="option" value="../AgentSession/properties_searchByType_agent.php?propertyType=Duplex">Duplex</option>
+                     <option class="option" value="../AgentSession/properties_searchByType_agent.php?propertyType=Villa">Villa</option>
+                     <option class="option" value="../AgentSession/properties_searchByType_agent.php?propertyType=Farm%20house">Farm house</option>
+                     <option class="option" value="../AgentSession/properties_searchByType_agent.php?propertyType=Retail%20property">Retail property</option>
+                     <option class="option" value="../AgentSession/properties_searchByType_agent.php?propertyType=Office%20building">Office building</option>
+                     <option class="option" value="../AgentSession/properties_searchByType_agent.php?propertyType=Warehouse">Warehouse</option>
+                     <option class="option" value="../AgentSession/properties_searchByType_agent.php?propertyType=Land">Land</option>  
                  </select>
              </div>
          </div>
@@ -110,7 +110,7 @@
                  <div class="property-box">
                      <img class="property-box-img" name="propertyMain_image" src="../uploads/<?= $property->propertyMain_image?>">
                      <div class="property-box-overlay">
-                         <a class="fancy" href="../AgentSession/propertyDetails_agent.php?PropertyMoreDetails=<?php echo $property->id ?>">
+                         <a class="fancy" href="../UserSession/propertyDetails_user.php?PropertyMoreDetails=<?php echo $property->id ?>">
                             <span class="overlay-box-btn-text">View property</a></span>
                          </a>
                      </div>
@@ -138,52 +138,53 @@
      </div>
      <!-- footer-->
      <?php
-         require('../Website/Footer/footer_agent.php')
+         require('../Footer/footer_agent.php')
        ?>
  </body>
  <script>
-     let subMenu = document.getElementById("subMenu");
-   function ToggleMenu()
-   {
-    subMenu.classList.toggle("open-menu");
-   }
-   //for mobile view menu
-   const menuHamburger = document.querySelector("#menu-hamburger")
-   const navLinks = document.querySelector(".navlinks")
-   menuHamburger.addEventListener('click',()=>
-   {
-     navLinks.classList.toggle('mobile-menu')
-   }
-   )
-   // change menu icon to close icon while open
-   let changeIcon = function(close)
-   {
-     icon.classList.toggle('fa-xmark')
-   }
-   //to not display the header content while menu is open
-   const icon = document.querySelector('#menu-hamburger');
-   const main = document.getElementById("main");
-   const footer = document.getElementById("footer");
-   icon.addEventListener('click', function() 
-   {
-     if (main.style.display === 'none')
+    let subMenu = document.getElementById("subMenu");
+     function ToggleMenu()
+     {
+        subMenu.classList.toggle("open-menu");
+     }
+     //for mobile view menu
+     const menuHamburger = document.querySelector("#menu-hamburger")
+     const navLinks = document.querySelector(".navlinks")
+     menuHamburger.addEventListener('click',()=>
+     {
+        navLinks.classList.toggle('mobile-menu')
+     }
+     )
+     // change menu icon to close icon while open
+     let changeIcon = function(close)
+     {
+       icon.classList.toggle('fa-xmark')
+     }
+     //to not display the header content while menu is open
+     const icon = document.querySelector('#menu-hamburger');
+     const main = document.getElementById("property-page");
+     const footer = document.getElementById("footer");
+     icon.addEventListener('click', function() 
+     {
+      if (main.style.display === 'none')
       {
-        main.style.display = 'block';
-        footer.style.display = 'block';
-      } else 
+         main.style.display = 'block';
+         footer.style.display = 'block';
+       }
+      else 
       {
-        main.style.display = 'none';
-        footer.style.display = 'none';
+         main.style.display = 'none';
+         footer.style.display = 'none';
       }
-   }
-   );
+     }
+     );
     const search = () =>{
-    const searchBox = document.getElementById("searchBox").value.toUpperCase().replace(/\s/g, "");
+    const searchBox = document.getElementById("searchBox").value.toUpperCase();
     const properties = document.getElementById("properties-page-container");
     const property = document.querySelectorAll(".property-box");
     for(var i=0; i < property.length; i++){
         let matchFound = false;
-        const details = property[i].querySelectorAll(".property-box h2, .property-box h4, .property-box h5");
+        const details = property[i].querySelectorAll(".property-box h2, .property-box h4, .property-box h5, .property-box p");
         if(details){
             details.forEach((detail) => {
               let textValue = detail.textContent || detail.innerHTML;
@@ -197,7 +198,45 @@
         }else{
             property[i].style.display = "none";
         }          
+    }}
+    const searchStatus = () =>
+       {
+         const searchBoxStatus = document.getElementById("searchBoxStatus").value.toUpperCase();
+         const properties = document.getElementById("properties-page-container");
+         const property = document.querySelectorAll(".property-box");
+         for(var i=0; i < property.length; i++)
+         {
+             let matchFound = false;
+             const details = property[i].querySelectorAll(".property-box p");
+             if(details)
+             {
+                 details.forEach((detail) =>
+                 {
+                     let textValue = detail.textContent || detail.innerHTML;
+                     if(textValue.toUpperCase().indexOf(searchBoxStatus) !== -1)
+                     {
+                         matchFound = true;
+                     }
+                 })
+             }
+             if(matchFound)
+             {
+                 property[i].style.display = "";
+             }
+             else
+             {
+                 property[i].style.display = "none";
+             }          
+          }
+       }
+       function redirectToPage() {
+     var selectElement = document.getElementById("searchBoxType");
+     var selectedValue = selectElement.value;
+     if (selectedValue !== "") {
+      window.location.href = selectedValue;
     }
-}
+    }
+    
+
 </script>
 </html> 

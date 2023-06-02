@@ -104,8 +104,8 @@
                      <h5 name="propertyAddress" style="margin-top: 0;margin-bottom:0px; font-size:16px;"><?= $property->propertyAddress?></h5>
                      <h5 name="propertyCity" style="margin-top: 0;margin-bottom:0px; font-size:16px;font-weight:600;"><?= $property->propertyCity?>,<?= $property->propertyCountry?></h5>
                      <div class="property-box-features" >
-                         |&nbsp;&nbsp;<i class="fa-solid fa-bed">&nbsp;<span name="propertyNumber_of_bedrooms"><?= $property->propertyNumber_of_bedrooms?></span>&nbsp;bd</i>&nbsp;|
-                         <i class="fa-solid fa-shower">&nbsp;<span name="propertyNumber_of_bathrooms"><?= $property->propertyNumber_of_bathrooms?></span>&nbsp;bt</i>&nbsp;|
+                         |&nbsp;&nbsp;<i class="fa-solid fa-bed" <?php if ($property->propertyType == 'Land') { echo 'style="display:none;"'; } ?>>&nbsp;<span name="propertyNumber_of_bedrooms" <?php if ($property->propertyType == 'Land') { echo 'style="display:none;"'; } ?>><?= $property->propertyNumber_of_bedrooms?></span>&nbsp;bd</i>&nbsp;|
+                         <i class="fa-solid fa-shower" <?php if ($property->propertyType == 'Land') { echo 'style="display:none;"'; } ?>>&nbsp;<span name="propertyNumber_of_bathrooms" <?php if ($property->propertyType == 'Land') { echo 'style="display:none;"'; } ?>><?= $property->propertyNumber_of_bathrooms?></span>&nbsp;bt</i>&nbsp;|
                          <i class="fa-solid fa-maximize">&nbsp;<span name="propertySize"><?= $property->propertySize?></span></i>&nbsp;m2|
                      </div>
                      <div class="property-box-price">
