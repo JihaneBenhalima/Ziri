@@ -68,7 +68,7 @@
         <a href="../Home/home_user.php">
           <img class="logo" src="../img/Logo/ZiriLogoWhite.png" alt="Ziri.logo">
         </a>
-        <div class="navlinks" id="second-navlinks">
+        <div class="navlinks" >
           <ul class="menu">
             <li><a href="../Search/search_user.php">Search</a></li>
             <li><a href="#">Ziri properties</a>
@@ -80,11 +80,33 @@
            </li>
            <li><a href="../UserSession/vacationRentals_user.php">Vacation rentals</a></li>
            <li><a href="../UserSession/add-new-rental_user.php">Add rental</a></li>
-           <img class="user-pic" src="../img/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png" alt="profile picture" onclick="ToggleMenu()">
+           <?php
+                         // Assuming $profilePicture contains the value fetched from the database
+                         $profilePicture = $_SESSION['profilePicture'];
+                         // Check if $profilePicture is empty or not
+                         if (!empty($profilePicture)) {
+                             // If $profilePicture is not empty, display the profile picture
+                              echo '<img class="user-pic"   style="height: 40px; width:40px;" onclick="ToggleMenu()" src="../agents/' . $profilePicture . '" alt="Profile Picture">';
+                         } else {
+                           // If $profilePicture is empty, display the default image
+                            echo '<img class="user-pic" style="height: 40px; width:40px;" onclick="ToggleMenu()" src="../img/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png" alt="Default Image">';
+                         }
+                       ?>
            <div class="sub-menu-wrap" id="subMenu">
               <sub-menu>
                 <div class="user-info">
-                  <img src="../img/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png" alt="profile picture">
+                <?php
+                         // Assuming $profilePicture contains the value fetched from the database
+                         $profilePicture = $_SESSION['profilePicture'];
+                         // Check if $profilePicture is empty or not
+                         if (!empty($profilePicture)) {
+                             // If $profilePicture is not empty, display the profile picture
+                              echo '<img class="user-pic"   style="height: 40px; width:40px;" onclick="ToggleMenu()" src="../agents/' . $profilePicture . '" alt="Profile Picture">';
+                         } else {
+                           // If $profilePicture is empty, display the default image
+                            echo '<img class="user-pic" style="height: 40px; width:40px;" onclick="ToggleMenu()" src="../img/png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png" alt="Default Image">';
+                         }
+                       ?>
                   <h3><?php echo $_SESSION['user_name']?><br><?php echo $_SESSION['user_last_name']?></h3>
                </div>
                <hr>
