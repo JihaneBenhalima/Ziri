@@ -154,8 +154,7 @@ button{
 }
 
 
-/*=============== BREAKPOINTS ===============*/
-/* For small devices */
+
 @media screen and (min-width: 576px){
   .modal__content{
     margin: auto;
@@ -165,14 +164,6 @@ button{
 
   
 }
-
-
-
-
-
-
-
-
 
 .input {
     border-radius: 10px;

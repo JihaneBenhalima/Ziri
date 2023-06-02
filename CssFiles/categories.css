@@ -9,7 +9,20 @@
     text-transform: capitalize;
     transition: .2s linear;
 }
-
+/*Scrollbar*/
+::-webkit-scrollbar
+{
+  width: 15px;
+}
+::-webkit-scrollbar-track
+{
+  background: #F4F4F4;
+}
+::-webkit-scrollbar-thumb
+{
+  background: #C9BEB9;
+  border-radius: 10px;
+}
 .container{
    /* background:linear-gradient(45deg, blueviolet, lightgreen);*/
     background: #1a1a1a;

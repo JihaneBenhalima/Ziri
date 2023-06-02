@@ -9,8 +9,6 @@
 header
 {
   height: 100px;
-  
- 
 } 
 
 .navbar
@@ -264,7 +262,6 @@ header
 }
 
 .sub-menu-link #icon{
-  width: 40px;
   background: grey;
   border-radius: 20px;
   padding: 8px;
